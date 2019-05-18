@@ -1,0 +1,21 @@
+DROP TABLE IF EXISTS post;
+DROP TABLE IF EXISTS hashtag;
+
+CREATE TABLE post (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created TEXT NOT NULL,
+    title TEXT NOT NULL,
+    body TEXT NOT NULL
+);
+
+CREATE TABLE hashtag (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    hash TEXT NOT NULL,
+    post_id INTEGER NOT NULL,	
+    FOREIGN KEY (post_id) REFERENCES post (id)	
+);
+
+
+
+
+  
